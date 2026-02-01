@@ -1,0 +1,701 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f4f6; /* Light grey background */
+    color: #1a1a1a;
+    line-height: 1.6;
+}
+
+/* --- Header / Navigation --- */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    max-width: 1400px;
+    margin: 0 auto;
+    position: sticky;
+    top: 0;
+    z-index:1000;
+    background-color: #f4f4f6;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    font-size: 1.1rem;
+    letter-spacing: 0.5px;
+}
+
+.logo-dot {
+    height: 18px;
+    width: 18px;
+    background-color: #f5a623; /* Orange dot */
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px;
+    font-size: 0.9rem;
+    color: #333;
+    cursor: pointer;
+}
+
+/* Divider lines between links */
+nav ul li:not(:last-child)::after {
+    content: "|";
+    margin-left: 20px;
+    color: #999;
+    font-weight: 300;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #f5a623;
+}
+
+/* --- Main Content Section --- */
+main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 85vh; /* Takes up most of the viewport height */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    gap: 60px; /* Space between image and text */
+}
+
+/* Left Column: Image */
+.profile-container {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end; /* Push image towards the center */
+}
+
+.profile-img-wrapper {
+    position: relative;
+    width: 350px;
+    height: 350px;
+    background-color: #f4f4f6;
+    border-radius: 50%; 
+    padding: 10px; /* Creates the white border thickness */
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    overflow: hidden;
+}
+
+.profile-img {
+    width: 95%;
+    height: 95%;
+    object-fit: cover;
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    top: 48%;
+    transform: translate(-50%, -50%);
+}
+
+/* Right Column: Text */
+.content-container {
+    flex: 1;
+    max-width: 600px;
+}
+
+h1 {
+    font-size: 4.5rem;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 2rem;
+    color: #000;
+}
+
+h2 {
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 1rem;
+    color: #222;
+}
+
+p {
+    font-size: 0.95rem;
+    color: #4a4a4a;
+    margin-bottom: 2.5rem;
+    text-align: justify; 
+}
+
+/* --- Circular Buttons --- */
+.button-group {
+    display: flex;
+    gap: 70px;
+}
+
+.circle-btn {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: #1a1a1a;
+    font-weight: 700;
+    font-size: 1.1 rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.circle-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.btn-yellow {
+    background-color: #f2aa00; /* Mustard Yellow */
+}
+
+.btn-red {
+    background-color: #f74d39; /* Red */
+}
+
+.btn-blue {
+    background-color: #6d90d8; /* Soft Blue */
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 900px) {
+    main {
+        flex-direction: column;
+        text-align: center;
+        padding-top: 40px;
+    }
+
+    .profile-container {
+        justify-content: center;
+    }
+
+    h1 {
+        font-size: 3rem;
+    }
+
+    .button-group {
+        justify-content: center;
+    }
+
+    header {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+
+footer {
+    width: 100%;
+    max-width: 1200px; /* Aligns with main content */
+    margin: 0 auto;
+    padding: 0 20px 60px 20px; /* Bottom padding for breathing room */
+    margin-top: 50px;
+}
+
+.footer-divider {
+    height: 1px;
+    background-color: #d1d1d1; /* The thin grey line */
+    margin-bottom: 40px;
+    width: 100%;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between; /* Spreads items: Left, Center, Right */
+    align-items: flex-start;
+}
+
+.footer-col h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #000;
+}
+
+.email-link {
+    color: #1a1a1a;
+    text-decoration: underline;
+    font-size: 1rem;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icons a {
+    color: #000;
+    font-size: 1.8rem; /* Icon size */
+    transition: color 0.2s;
+}
+
+.social-icons a:hover {
+    color: #555;
+}
+
+.copyright-col {
+    display: flex;
+    align-items: flex-end; /* Pushes text to align with the icons visually */
+    height: 100%;
+    margin-top: auto; 
+}
+
+.copyright-col p {
+    font-size: 0.9rem;
+    color: #1a1a1a;
+    margin: 0;
+    margin-top: 35px; /* Aligns vertically with the other columns */
+}
+
+/* Footer Responsive for Mobile */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 30px;
+    }
+    
+    .copyright-col p {
+        margin-top: 0;
+    }
+}
+
+/* --- CV Page Specific Styles --- */
+
+/* Wrapper for the CV page content */
+.cv-main {
+    flex-direction: column; /* Stack elements vertically */
+    align-items: flex-start; /* Align to the left */
+    display: block; /* Overrides the flex centering from the home page main */
+    padding-top: 40px;
+}
+
+/* Page Title "Jing Zang" */
+.page-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+/* Divider Line & Icons Container */
+.cv-divider-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 60px;
+    position: relative;
+}
+
+.cv-divider {
+    height: 1px;
+    background-color: #d1d1d1;
+    flex-grow: 1; /* Takes up all available space */
+}
+
+.cv-header-icons {
+    margin-left: 20px;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.cv-header-icons a {
+    text-decoration: none;
+    color: #000;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+/* The Grid Layout for Sections (Education, etc.) */
+.cv-section {
+    display: flex;
+    width: 100%;
+    margin-bottom: 60px; /* Space between Education and next section */
+    
+}
+
+/* Left Column: "Education" Title */
+.cv-section-title {
+    width: 25%; /* Takes up 25% of the width */
+    padding-right: 20px;
+}
+
+.cv-section-title h2 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #1a1a1a;
+}
+
+/* Right Column: List of entries */
+.cv-items-list {
+    width: 75%; /* Takes up the rest */
+}
+
+.cv-item {
+    display: flex;
+    margin-bottom: 40px; /* Space between PhD and Masters */
+}
+
+.cv-date {
+    width: 150px; /* Fixed width for dates */
+    font-size: 0.95rem;
+    color: #555;
+    flex-shrink: 0; /* Prevents date from getting squished */
+    padding-right: 20px;
+}
+
+.date-note {
+    font-size: 0.85rem;
+    font-style: italic;
+    color: #777;
+}
+
+.cv-details {
+    flex-grow: 1;
+}
+
+.cv-details h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.cv-details h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.cv-details p {
+    font-size: 0.95rem;
+    color: #4a4a4a;
+    line-height: 1.6;
+    text-align: left; /* Ensures text isn't justified like the home page if not needed */
+}
+
+/* Responsive: Stack vertically on mobile */
+@media (max-width: 768px) {
+    .cv-section {
+        flex-direction: column;
+    }
+    
+    .cv-section-title {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .cv-items-list {
+        width: 100%;
+    }
+
+    .cv-item {
+        flex-direction: column;
+    }
+
+    .cv-date {
+        margin-bottom: 10px;
+    }
+}
+/* --- Journal List Specifics --- */
+.journal-title {
+    padding-right: 20px;
+    padding-bottom: 20px;
+}
+
+.journal-title h2 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #1a1a1a;
+}
+
+.journal-list {
+    list-style-type: none; /* Removes default bullets */
+    padding: 0;
+    max-width: 800px;
+    margin-left: auto;
+}
+
+.journal-list li {
+    font-size: 0.95rem;
+    color: #4a4a4a;
+    line-height: 1.6;
+    margin-bottom: 20px; /* Space between each publication */
+}
+
+.journal-list li a {
+    color: #1a1a1a;
+    text-decoration: underline; /* Matches the links in image_196a2e.png */
+}
+
+.journal-list li a:hover {
+    color: #f5a623;
+}
+
+/* --- Professional Service Section --- */
+
+.service-section {
+    display: flex;
+    width: 100%;
+    margin-bottom: 60px; /* Space between Education and next section */
+    justify-content: flex-end;
+}
+
+.service-group {
+    margin-bottom: 30px; /* Space between groups (e.g. between Reviewer and Leadership) */
+}
+
+.service-group h4 {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #000;
+    /* This ensures headers look distinct from the list items */
+}
+
+.service-list {
+    list-style: none; /* We remove default bullets to control alignment better */
+    padding: 0;
+}
+
+.service-list li {
+    display: flex; /* Aligns text and date side-by-side */
+    justify-content: space-between; /* Pushes date to the far right */
+    align-items: baseline; /* Aligns text properly even if font sizes differ */
+    margin-bottom: 8px; /* Space between rows */
+    font-size: 0.95rem;
+    color: #4a4a4a;
+}
+
+/* Custom Bullet Point */
+.service-text::before {
+    content: "•";
+    color: #000;
+    font-weight: bold;
+    display: inline-block;
+    width: 1em; /* Space for the bullet */
+    margin-left: -1em; /* Pulls bullet left so text aligns */
+}
+
+.service-text {
+    padding-left: 15px; /* Indent text slightly */
+    text-align: left;
+    max-width: 80%; /* Ensures text wraps before hitting the date */
+}
+
+.service-date {
+    font-style: italic;
+    color: #1a1a1a;
+    text-align: right;
+    white-space: nowrap; /* Prevents date from wrapping */
+    flex-shrink: 0; /* Ensures date is never squished */
+    margin-left: 20px; /* Minimum space between text and date */
+}
+
+.projects-main {
+    display: block !important;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.projects-main h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 50px; /* Space between "Research Publications" and the content */
+    border-bottom: 2px solid #eaeaea; /* Optional: Adds a subtle line under the main title */
+    padding-bottom: 20px;
+}
+/* THE LAYOUT CONTAINER */
+/* This targets the parent container to create the side-by-side layout */
+.projects-main > .Publication {
+    display: flex;          /* Enables side-by-side layout */
+    align-items: flex-start;/* Aligns text and image to the top */
+    gap: 50px;              /* Creates the big space between text and image */
+    margin-bottom: 60px;    /* Space between this project and the next one */
+    justify-content: space-between;
+}
+
+/* THE TEXT SECTION */
+.Publication.description {
+    flex: 1.3;              /* Gives the text section slightly more width (approx 60%) */
+    min-width: 300px;
+    max-width: 600px;
+}
+
+.Publication.description h2 {
+    text-decoration: underline; /* Adds the underline seen in your image */
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+    color: #000;
+}
+
+.Publication.description p {
+    line-height: 1.6;       /* Makes the text easier to read */
+    font-size: 1rem;
+    color: #333;
+}
+
+/* THE IMAGE SECTION */
+.Publication.image {
+    flex: 1;                /* Gives the image section the remaining width (approx 40%) */
+    text-align: center;     /* Centers the image within its column */
+    display: block;         /* Reset layout */
+}
+
+.Publication.image img {
+    width: 100%;            /* Ensures image fits the column */
+    max-width: 500px;       /* Prevents image from getting too huge on big screens */
+    height: auto;
+    padding-top: 80px;           /* Maintains aspect ratio */
+}
+
+/* MOBILE RESPONSIVENESS */
+/* Stacks the text and image vertically on small screens/phones */
+@media (max-width: 768px) {
+    .projects-main > .Publication {
+        flex-direction: column;
+    }
+    
+    .Publication.image {
+        width: 100%;
+        margin-top: 20px;
+    }
+}
+
+.side-projects{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px 300px;
+    justify-content: center;
+}
+
+.side-project{
+    min-width: 300px;
+    max-width: 400px;
+    overflow: hidden;
+}
+
+.side-project img{
+    width: 300px;
+    height: 200px;
+    padding-top: 40px;
+    object-fit: cover;
+}
+
+/* 1. Center the entire page content */
+.contact-clean-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 70vh; /* Takes up 70% of the screen height */
+    text-align: center;
+    flex-direction: column;
+}
+
+.contact-hero h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #000;
+}
+
+.contact-text {
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 40px;
+}
+
+/* 2. The Big Email Link Style */
+.big-email-link {
+    display: inline-block;
+    font-size: 2.5rem; /* Very large text */
+    font-weight: 700;
+    color: #1a1a1a;
+    text-decoration: none;
+    border-bottom: 3px solid #f5a623; /* Orange underline */
+    padding-bottom: 5px;
+    margin-bottom: 50px;
+    transition: all 0.3s ease;
+}
+
+.big-email-link:hover {
+    color: #f5a623;
+    border-color: #1a1a1a;
+    transform: scale(1.02); /* Slight zoom on hover */
+}
+
+/* 3. Location and Icons */
+.contact-details {
+    margin-top: 20px;
+}
+
+.location {
+    font-size: 1rem;
+    color: #777;
+    margin-bottom: 25px;
+}
+
+.location i {
+    margin-right: 8px;
+    color: #f5a623;
+}
+
+.social-row {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-circle {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #1a1a1a;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+}
+
+.social-circle:hover {
+    background-color: #f5a623;
+    color: white;
+    border-color: #f5a623;
+    transform: translateY(-3px);
+}
+
+/* Responsive adjustment for mobile */
+@media (max-width: 600px) {
+    .contact-hero h1 {
+        font-size: 2.5rem;
+    }
+    .big-email-link {
+        font-size: 1.5rem;
+    }
+}
