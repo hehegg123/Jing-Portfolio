@@ -7,45 +7,106 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body>
+<body class="home-page">
 
     <header>
         <div class="logo">
             <span class="logo-dot"></span>
             Jing Zang 臧晶
         </div>
-        <nav>
+        <nav aria-label="Main navigation">
             <ul>
-                <li><a href="./">Home</a></li>
-                <li><a href="/CV/index.html">CV</a></li>
-                <li><a href="/projects/index.html">Projects</a></li>
-                <li><a href="/Contact/index.html">Contact</a></li>
+                <li><a href="index.html" aria-current="page">Home</a></li>
+                <li><a href="CV/index.html">CV</a></li>
+                <li><a href="projects/index.html">Projects</a></li>
+                <li><a href="Contact/index.html">Contact</a></li>
             </ul>
         </nav>
     </header> 
 
-    <main>
-        <div class="profile-container">
-            <div class="profile-img-wrapper">
-                <img src="Resource/Main-image.png" alt="Jing Zang" class="profile-img">
-            </div>
-        </div>
+    <main class="home-main">
+        <section class="home-hero" aria-labelledby="hero-title">
+            <div class="vehicle-stage">
+                <hgroup class="hero-heading">
+                    <p>Jing Zang · Human Factors &amp; Automotive UX</p>
+                    <h1 id="hero-title">Meet the Researcher Behind the Wheel</h1>
+                </hgroup>
 
-        <div class="content-container">
-            <h1>Hi, I'm<br>Jing Zang</h1>
-            
-            <h2>About me</h2>
-            
-            <p>
-                I believe in the transformative power of language to shape interactions by conveying both emotions and information effectively. In my research, I focus on designing In-Vehicle Intelligent Voice Agents that intuitively adapt to user states and communicate efficiently, effortlessly, and engagingly through natural human language. Through such human-centered designs, my goal is to enhance safety, usability, and the overall user experience in automated vehicles.
-            </p>
+                <div class="vehicle-body">
+                    <div class="vehicle-actions">
+                        <button class="vehicle-trigger" type="button" aria-label="Meet Jing Zang" aria-expanded="false" aria-controls="vehicle-intro" disabled>
+                            <span class="vehicle-arrival">
+                                <svg class="hero-vehicle" viewBox="0 28 520 174" width="520" height="174" aria-hidden="true">
+                                    <defs>
+                                        <clipPath id="driver-window">
+                                            <path d="M270 65h23c24 0 39 5 55 19l25 22H270z"/>
+                                        </clipPath>
+                                    </defs>
 
-            <div class="button-group">
-                <a href="/CV/index.html" class="circle-btn btn-yellow">View CV</a>
-                <a href="/projects/index.html" class="circle-btn btn-red">My Projects</a>
-                <a href="/Contact/index.html" class="circle-btn btn-blue">Contact</a>
+                                    <ellipse cx="263" cy="184" rx="219" ry="13" fill="#dedee7"/>
+                                    <path d="M49 151c0-19 10-31 28-36l43-12 45-37c16-13 32-17 55-17h73c27 0 48 7 66 23l38 33 51 10c22 4 34 17 37 38l1 11c0 9-7 15-16 15H65c-10 0-17-7-17-16z" fill="#9db5e5" stroke="#27354d" stroke-width="3" stroke-linejoin="round"/>
+                                    <path d="M49 151h436l1 13c0 9-7 15-16 15H65c-10 0-17-7-17-16z" fill="#718bbb"/>
+                                    <path d="M148 106l30-27c12-10 25-14 43-14h35v41z" fill="#dce9f8"/>
+                                    <path d="M270 65h23c24 0 39 5 55 19l25 22H270z" fill="#dce9f8"/>
+
+                                    <g class="vehicle-driver" clip-path="url(#driver-window)">
+                                        <path d="M295 108c1-11 8-19 19-22 14-4 26 4 29 22z" fill="#da795f"/>
+                                        <path d="M300 83c-1-12 6-21 18-22 12-1 22 8 21 20-1 7 2 12 5 15-7 4-15 3-20 0-7 2-18 1-24-4z" fill="#292638"/>
+                                        <path d="M313 77c7-1 11-5 14-8 5 3 8 9 7 15-1 7-6 12-12 12-7 0-12-5-13-11l-1-5z" fill="#eab798"/>
+                                        <path d="M321 92v7m12-17 4 3-3 1" fill="none" stroke="#b97a60" stroke-width="1.5" stroke-linecap="round"/>
+                                        <circle cx="326" cy="81" r="1.2" fill="#292638"/>
+                                        <path d="M326 89q3 2 5-1" fill="none" stroke="#8c4a41" stroke-width="1.3" stroke-linecap="round"/>
+                                        <path d="M328 103l15 4 11-10" fill="none" stroke="#da795f" stroke-width="6" stroke-linecap="round"/>
+                                        <path d="M350 97l5-4" fill="none" stroke="#eab798" stroke-width="4" stroke-linecap="round"/>
+                                        <path d="M355 91l7 12" stroke="#27354d" stroke-width="3" stroke-linecap="round"/>
+                                    </g>
+
+                                    <path d="M148 106l30-27c12-10 25-14 43-14h35v41zm122-41h23c24 0 39 5 55 19l25 22H270z" fill="none" stroke="#27354d" stroke-width="2.5" stroke-linejoin="round"/>
+                                    <path d="M263 109v53m117-49 3 13m-204 10h66m36 0h38" fill="none" stroke="#546f9b" stroke-width="2.5" stroke-linecap="round"/>
+                                    <path d="M75 122h22l-12 9H62z" fill="#d76a55"/>
+                                    <path d="M436 122h16c9 2 16 7 20 14h-25z" fill="#fff4d4" stroke="#27354d" stroke-width="1.5" stroke-linejoin="round"/>
+                                    <path d="M237 48l5-10h28l5 10z" fill="#f2aa00" stroke="#27354d" stroke-width="2.5" stroke-linejoin="round"/>
+                                    <path d="M48 151c0-19 10-31 28-36l44-12 45-37c16-13 32-17 55-17h73c27 0 48 7 66 23l38 33 51 10c22 4 34 17 37 38l1 11c0 9-7 15-16 15H65c-10 0-17-7-17-16z" fill="none" stroke="#27354d" stroke-width="3" stroke-linejoin="round"/>
+                                    <g class="vehicle-wheel">
+                                        <circle cx="130" cy="166" r="28" fill="#27354d"/>
+                                        <circle cx="130" cy="166" r="16" fill="#dce9f8"/>
+                                        <path d="M130 152v28m-14-14h28" stroke="#718bbb" stroke-width="3"/>
+                                        <circle cx="130" cy="166" r="4" fill="#27354d"/>
+                                    </g>
+                                    <g class="vehicle-wheel">
+                                        <circle cx="404" cy="166" r="28" fill="#27354d"/>
+                                        <circle cx="404" cy="166" r="16" fill="#dce9f8"/>
+                                        <path d="M404 152v28m-14-14h28" stroke="#718bbb" stroke-width="3"/>
+                                        <circle cx="404" cy="166" r="4" fill="#27354d"/>
+                                    </g>
+                                </svg>
+                            </span>
+                            <span class="vehicle-prompt" aria-hidden="true">
+                                <span class="vehicle-prompt-hover">Hover to meet me!</span>
+                                <span class="vehicle-prompt-touch">Tap to meet me!</span>
+                            </span>
+                        </button>
+
+                        <div class="button-group">
+                            <a href="CV/index.html" class="circle-btn btn-yellow">View CV</a>
+                            <a href="projects/index.html" class="circle-btn btn-red">Projects</a>
+                            <a href="Contact/index.html" class="circle-btn btn-blue">Contact</a>
+                        </div>
+                    </div>
+
+                    <div class="vehicle-intro" id="vehicle-intro" inert>
+                        <div class="vehicle-intro-clip">
+                            <div class="vehicle-intro-content">
+                                <h2>Hi, I'm Jing! 👋</h2>
+                                <p>I'm a Human Factors and UX Researcher and a Ph.D. candidate at Purdue University.</p>
+                                <p>I believe great technology starts with understanding people: not just what they say they want, but what they truly need and how they actually behave. Through user research, human-centered design, and experimental evaluation, I explore how people interact with intelligent and automated systems, uncover user needs, and design and evaluate interaction strategies to make interactions with technology safer, more efficient, effortless, and engaging.</p>
+                                <p>Nice to meet you here! Feel free to explore my website and check out some of the projects I have been working on!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
+        </section>
     </main>
 
     <footer>
@@ -70,5 +131,6 @@
         </div>
     </footer>
 
+    <script src="home.js" defer></script>
 </body>
 </html>

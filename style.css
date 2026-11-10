@@ -84,39 +84,215 @@ main {
     gap: 60px; /* Space between image and text */
 }
 
-/* Left Column: Image */
-.profile-container {
-    flex: 1;
+/* Homepage */
+html:has(.home-page) {
+    scrollbar-gutter: stable;
+}
+
+.home-main {
+    display: block;
+    min-height: 0;
+    max-width: 1520px;
+    padding: 0 clamp(16px, 4vw, 42px);
+    text-align: left;
+}
+
+.home-hero {
     display: flex;
-    justify-content: flex-end; /* Push image towards the center */
+    flex-direction: column;
+    min-height: 72svh;
+    padding: clamp(28px, 6svh, 64px) 0 clamp(28px, 4svh, 48px);
 }
 
-.profile-img-wrapper {
+.vehicle-stage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: clamp(26px, 5.5svh, 58px);
+}
+
+.hero-heading {
+    max-width: 1040px;
+    text-align: center;
+}
+
+.hero-heading p {
+    margin: 0 0 clamp(12px, 2svh, 20px);
+    text-align: inherit;
+    color: #774800;
+    font-size: 0.88rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.hero-heading h1 {
+    margin: 0;
+    font-size: clamp(2rem, 4.6vw, 3.25rem);
+    letter-spacing: -0.045em;
+    text-wrap: balance;
+}
+
+.vehicle-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-block-start: 5svh;
+}
+
+.vehicle-actions {
+    display: contents;
+}
+
+.vehicle-trigger {
+    display: grid;
+    row-gap: clamp(10px, 2.5svh, 24px);
+    width: min(100%, 520px);
+    justify-items: center;
+    padding: 0 0 5px;
+    border: 0;
+    border-radius: 18px;
+    background: transparent;
+    color: #374359;
+    font: inherit;
+    cursor: pointer;
+    touch-action: manipulation;
+}
+
+.vehicle-trigger:disabled {
+    cursor: default;
+}
+
+.vehicle-trigger:focus-visible,
+.home-hero .circle-btn:focus-visible {
+    outline: 2px solid #774800;
+    outline-offset: 4px;
+}
+
+.vehicle-arrival {
+    display: block;
+    width: 100%;
+    animation: vehicle-arrive 1.15s cubic-bezier(0.2, 0.75, 0.3, 1) both;
+}
+
+.hero-vehicle {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.vehicle-wheel {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: vehicle-wheel-turn 1.15s cubic-bezier(0.2, 0.75, 0.3, 1);
+}
+
+.vehicle-driver {
+    opacity: 0;
+    transition: opacity 220ms ease;
+}
+
+.vehicle-stage[data-open] .vehicle-driver {
+    opacity: 1;
+}
+
+.vehicle-prompt {
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.vehicle-trigger:disabled .vehicle-prompt {
+    visibility: hidden;
+}
+
+.vehicle-prompt-hover {
+    display: none;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .vehicle-prompt-hover {
+        display: inline;
+    }
+
+    .vehicle-prompt-touch {
+        display: none;
+    }
+}
+
+.vehicle-intro {
+    display: grid;
+    grid-template-rows: 0fr;
+    z-index: 1;
+    width: min(100%, 680px);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(8px);
+    transition: grid-template-rows 240ms ease, opacity 240ms ease, transform 240ms ease, visibility 0s linear 240ms;
+}
+
+.vehicle-intro-clip {
+    min-height: 0;
+    overflow: clip;
+    overflow-clip-margin: 10px;
+}
+
+.vehicle-intro-content {
     position: relative;
-    width: 350px;
-    height: 350px;
-    background-color: #f4f4f6;
-    border-radius: 50%; 
-    padding: 10px; /* Creates the white border thickness */
-    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-    overflow: hidden;
+    margin-top: 16px;
+    padding: 14px 16px;
+    border: 1px solid #dadde7;
+    border-radius: 16px;
+    background: #fff;
+    box-shadow: 0 4px 8px #27354d16;
 }
 
-.profile-img {
-    width: 95%;
-    height: 95%;
-    object-fit: cover;
-    border-radius: 50%;
+.vehicle-intro-content::after {
+    content: "";
     position: absolute;
-    left: 50%;
-    top: 48%;
-    transform: translate(-50%, -50%);
+    top: -7px;
+    left: 60%;
+    width: 12px;
+    height: 12px;
+    border-top: 1px solid #dadde7;
+    border-left: 1px solid #dadde7;
+    background: #fff;
+    transform: rotate(45deg);
 }
 
-/* Right Column: Text */
-.content-container {
-    flex: 1;
-    max-width: 600px;
+.vehicle-stage[data-open] .vehicle-intro {
+    grid-template-rows: 1fr;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    transition-delay: 0s;
+}
+
+.vehicle-intro h2 {
+    margin: 0 0 6px;
+    font-size: 1.2rem;
+    text-transform: none;
+    letter-spacing: 0;
+}
+
+.vehicle-intro p {
+    margin: 0 0 8px;
+    text-align: left;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.vehicle-intro p:last-child {
+    margin-bottom: 0;
+}
+
+@keyframes vehicle-arrive {
+    from { transform: translateX(calc(-50vw - 50%)); }
+    to { transform: translateX(0); }
+}
+
+@keyframes vehicle-wheel-turn {
+    to { transform: rotate(720deg); }
 }
 
 h1 {
@@ -145,12 +321,19 @@ p {
 /* --- Circular Buttons --- */
 .button-group {
     display: flex;
-    gap: 70px;
+    justify-content: center;
+    gap: clamp(10px, 3vw, 28px);
+    margin-top: 12px;
+}
+
+.vehicle-actions .button-group {
+    order: 1;
+    margin-top: clamp(24px, 5svh, 48px);
 }
 
 .circle-btn {
-    width: 100px;
-    height: 100px;
+    width: clamp(76px, 12vw, 100px);
+    aspect-ratio: 1;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -158,7 +341,10 @@ p {
     text-decoration: none;
     color: #1a1a1a;
     font-weight: 700;
-    font-size: 1.1 rem;
+    font-size: clamp(0.78rem, 2.7vw, 1rem);
+    line-height: 1.2;
+    text-align: center;
+    padding-inline: 6px;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
@@ -187,21 +373,90 @@ p {
         padding-top: 40px;
     }
 
-    .profile-container {
-        justify-content: center;
-    }
-
     h1 {
         font-size: 3rem;
-    }
-
-    .button-group {
-        justify-content: center;
     }
 
     header {
         flex-direction: column;
         gap: 15px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .vehicle-body {
+        display: grid;
+        grid-template-areas: "vehicle";
+        align-items: start;
+    }
+
+    .vehicle-actions {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        grid-area: vehicle;
+    }
+
+    .vehicle-intro {
+        grid-area: vehicle;
+        justify-self: start;
+        margin-inline-start: calc(50% + 246px);
+        width: min(420px, calc(50% - 246px));
+    }
+
+    .vehicle-intro-content {
+        margin-top: 0;
+    }
+
+    .vehicle-intro-content::after {
+        top: 52px;
+        left: -7px;
+        border-top: 0;
+        border-bottom: 1px solid #dadde7;
+    }
+}
+
+@media (max-width: 560px) {
+    .home-hero {
+        min-height: 66svh;
+        padding-block-start: clamp(24px, 4svh, 36px);
+    }
+
+    .vehicle-stage {
+        gap: clamp(24px, 4svh, 38px);
+    }
+
+    .vehicle-actions .button-group {
+        margin-top: clamp(24px, 4svh, 36px);
+    }
+
+    .home-page header {
+        padding-inline: 12px;
+    }
+
+    .home-page nav ul li {
+        margin-left: 0;
+    }
+
+    .home-page nav ul li:not(:last-child)::after {
+        margin-inline: 10px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .vehicle-arrival,
+    .vehicle-wheel {
+        animation: none;
+    }
+
+    .vehicle-driver,
+    .vehicle-intro,
+    .home-hero .circle-btn {
+        transition: none;
+    }
+
+    .home-hero .circle-btn:hover {
+        transform: none;
     }
 }
 
@@ -279,6 +534,34 @@ footer {
     
     .copyright-col p {
         margin-top: 0;
+    }
+}
+
+.home-page footer {
+    margin-top: 5svh;
+    padding-bottom: 20px;
+}
+
+.home-page .footer-divider {
+    margin-bottom: clamp(20px, 3.5svh, 32px);
+}
+
+.home-page .copyright-col p {
+    margin-top: 0;
+}
+
+@media (min-width: 560px) and (max-width: 768px) {
+    .home-page .footer-container {
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 16px;
+        text-align: left;
+    }
+}
+
+@media (max-width: 559px) {
+    .home-page .footer-container {
+        gap: 12px;
     }
 }
 
@@ -513,95 +796,459 @@ footer {
     margin-left: 20px; /* Minimum space between text and date */
 }
 
+/* --- Projects and case studies --- */
+.portfolio-projects nav a[aria-current] {
+    font-weight: 700;
+    text-decoration: underline;
+    text-decoration-color: #b46900;
+    text-underline-offset: 5px;
+}
+
 .projects-main {
-    display: block !important;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
+    display: block;
+    min-height: auto;
+    max-width: 900px;
+    padding: clamp(20px, 4vw, 40px) clamp(18px, 4vw, 34px) 0;
+    text-align: left;
+}
+
+.projects-main p {
+    margin: 0;
+    text-align: left;
 }
 
 .projects-main h1 {
-    font-size: 2.5rem;
-    font-weight: bold;
-    margin-bottom: 50px; /* Space between "Research Publications" and the content */
-    border-bottom: 2px solid #eaeaea; /* Optional: Adds a subtle line under the main title */
-    padding-bottom: 20px;
-}
-/* THE LAYOUT CONTAINER */
-/* This targets the parent container to create the side-by-side layout */
-.projects-main > .Publication {
-    display: flex;          /* Enables side-by-side layout */
-    align-items: flex-start;/* Aligns text and image to the top */
-    gap: 50px;              /* Creates the big space between text and image */
-    margin-bottom: 60px;    /* Space between this project and the next one */
-    justify-content: space-between;
+    font-size: clamp(1.85rem, 4vw, 2.65rem);
+    letter-spacing: -0.03em;
+    margin: 0 0 0.45em;
 }
 
-/* THE TEXT SECTION */
-.Publication.description {
-    flex: 1.3;              /* Gives the text section slightly more width (approx 60%) */
-    min-width: 300px;
-    max-width: 600px;
+.projects-intro,
+.case-study-intro,
+.case-study-intro + .case-study-text {
+    max-width: 780px;
 }
 
-.Publication.description h2 {
-    text-decoration: underline; /* Adds the underline seen in your image */
-    margin-bottom: 15px;
-    font-size: 1.5rem;
-    color: #000;
-}
-
-.Publication.description p {
-    line-height: 1.6;       /* Makes the text easier to read */
+.projects-intro > p:last-child,
+.case-study-intro > p:last-child {
+    max-width: 68ch;
     font-size: 1rem;
-    color: #333;
 }
 
-/* THE IMAGE SECTION */
-.Publication.image {
-    flex: 1;                /* Gives the image section the remaining width (approx 40%) */
-    text-align: center;     /* Centers the image within its column */
-    display: block;         /* Reset layout */
+.projects-main .project-label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: #5b5b5b;
+    letter-spacing: 0.055em;
+    text-transform: uppercase;
 }
 
-.Publication.image img {
-    width: 100%;            /* Ensures image fits the column */
-    max-width: 500px;       /* Prevents image from getting too huge on big screens */
-    height: auto;
-    padding-top: 80px;           /* Maintains aspect ratio */
-}
-
-/* MOBILE RESPONSIVENESS */
-/* Stacks the text and image vertically on small screens/phones */
-@media (max-width: 768px) {
-    .projects-main > .Publication {
-        flex-direction: column;
-    }
-    
-    .Publication.image {
-        width: 100%;
-        margin-top: 20px;
-    }
-}
-
-.side-projects{
+.project-filters:not([hidden]) {
     display: flex;
     flex-wrap: wrap;
-    gap: 50px 300px;
-    justify-content: center;
+    gap: 8px;
+    margin-top: 18px;
 }
 
-.side-project{
-    min-width: 300px;
-    max-width: 400px;
+.project-filters button {
+    min-height: 36px;
+    padding: 5px 13px;
+    border: 1px solid #bcbcc3;
+    border-radius: 999px;
+    background: transparent;
+    color: #333;
+    font: inherit;
+    font-size: 0.86rem;
+    cursor: pointer;
+}
+
+.project-filters button:hover {
+    border-color: #222;
+}
+
+.project-filters button[aria-pressed="true"] {
+    border-color: #1a1a1a;
+    background: #1a1a1a;
+    color: #fff;
+}
+
+.project-filters button:focus-visible {
+    outline: 2px solid #976000;
+    outline-offset: 2px;
+}
+
+.project-group {
+    margin-top: 24px;
+    padding-top: 12px;
+    border-top: 1px solid #d1d1d1;
+}
+
+.project-group > h2,
+.case-study-text h2 {
+    font-size: 1.05rem;
+    text-transform: none;
+    letter-spacing: 0;
+    margin-bottom: 12px;
+}
+
+.project-group-number {
+    margin-right: 0.4em;
+    color: #774800;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.project-card {
+    position: relative;
+}
+
+.project-card:focus-within {
+    outline: 2px solid #976000;
+    outline-offset: 3px;
+}
+
+.project-card-image {
+    width: min(100%, 328px);
+    aspect-ratio: 2 / 1;
     overflow: hidden;
+    border-radius: 10px;
+    background: #fff;
 }
 
-.side-project img{
-    width: 300px;
-    height: 200px;
-    padding-top: 40px;
+.project-card-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.project-card-image--photo img {
     object-fit: cover;
+}
+
+.project-card-text {
+    display: grid;
+    gap: 3px;
+    padding-top: 8px;
+}
+
+.project-card-text p {
+    font-size: 0.88rem;
+}
+
+.project-card--text .project-card-text {
+    align-content: center;
+    min-height: 82px;
+    padding: 12px;
+    border-radius: 10px;
+    background: #ececf0;
+}
+
+.project-card h3 {
+    font-size: 1.12rem;
+    line-height: 1.25;
+}
+
+.project-card h3 a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.project-card h3 a::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+}
+
+.project-card:hover h3 a,
+.project-card h3 a:focus-visible {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.project-paper-link,
+.project-back {
+    color: #774800;
+    font-weight: 700;
+}
+
+.project-back {
+    display: inline-block;
+    margin-bottom: 18px;
+}
+
+.case-study-intro .case-study-status {
+    margin-top: 8px;
+    font-size: 0.9rem;
+}
+
+.case-study-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+    align-items: start;
+    gap: clamp(16px, 3vw, 28px);
+    margin-top: 22px;
+}
+
+.case-study-layout figure,
+.case-study-cover {
+    border: 1px solid #d8d8dd;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #fff;
+}
+
+.case-study-layout img,
+.case-study-cover img,
+.case-study-video video {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.case-study-cover {
+    max-width: 640px;
+    margin-bottom: 16px;
+}
+
+.case-study-video {
+    max-width: 640px;
+    margin-top: 16px;
+}
+
+.case-study-video video {
+    border-radius: 10px;
+    background: #111;
+}
+
+.case-study-video figcaption {
+    margin-top: 5px;
+    font-size: 0.88rem;
+    color: #4a4a4a;
+}
+
+.case-study-intro + .case-study-text {
+    margin-top: 22px;
+}
+
+.case-study-text section {
+    margin-bottom: 16px;
+}
+
+.case-study-text h2 {
+    margin-bottom: 5px;
+}
+
+.case-study-text p {
+    font-size: 1rem;
+}
+
+.case-study-text p + p,
+.case-study-text ul {
+    margin-top: 8px;
+}
+
+.case-study-text ul {
+    padding-left: 22px;
+}
+
+.voice-study-figure,
+.voice-study-reliability {
+    margin-top: 16px;
+}
+
+.voice-study-figure figcaption,
+.voice-study-reliability caption {
+    margin-bottom: 8px;
+    font-weight: 700;
+    text-align: left;
+}
+
+.voice-study-dialogues {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.voice-study-dialogue,
+.voice-study-preference {
+    padding: 14px;
+    border: 1px solid #d8d8dd;
+    border-radius: 10px;
+    background: #fff;
+}
+
+.voice-study-dialogue h3 {
+    font-size: 0.95rem;
+    margin-bottom: 8px;
+}
+
+.voice-study-dialogue .voice-study-message {
+    display: grid;
+    gap: 2px;
+    padding: 8px 10px;
+    border-radius: 8px;
+    background: #f1f1f4;
+    font-size: 0.9rem;
+}
+
+.voice-study-dialogue .voice-study-message--driver {
+    margin-left: 20px;
+    background: #f6ebd8;
+}
+
+.voice-study-preference figcaption strong {
+    font-size: 1.75rem;
+    color: #774800;
+}
+
+.voice-study-preference meter {
+    display: block;
+    width: 100%;
+    height: 16px;
+    margin-bottom: 5px;
+}
+
+.voice-study-reliability {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+}
+
+.voice-study-reliability th,
+.voice-study-reliability td {
+    padding: 8px;
+    border-bottom: 1px solid #d8d8dd;
+}
+
+.voice-study-reliability thead {
+    background: #ececf0;
+}
+
+.voice-study-reliability th:not(:first-child),
+.voice-study-reliability td {
+    text-align: center;
+}
+
+.voice-study-reliability th span {
+    display: block;
+    font-weight: 400;
+}
+
+.case-study-text .voice-study-note {
+    margin-top: 6px;
+    font-size: 0.88rem;
+}
+
+.takeover-findings {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 19rem), 1fr));
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.takeover-findings figure {
+    min-width: 0;
+    padding: clamp(12px, 2vw, 18px);
+    border: 1px solid #d8d8dd;
+    border-radius: 12px;
+    background: #fff;
+}
+
+.takeover-findings figcaption strong,
+.takeover-findings figcaption span {
+    display: block;
+}
+
+.takeover-findings figcaption span {
+    color: #4a4a4a;
+    font-size: 0.875rem;
+}
+
+.takeover-times {
+    display: grid;
+    gap: 9px;
+    margin: 12px 0;
+    font-size: 0.9rem;
+}
+
+.takeover-times dd {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 4em;
+    align-items: center;
+    gap: 8px;
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+}
+
+.takeover-bar {
+    height: 0.7em;
+    border-radius: 999px;
+    background: #e7edf6;
+}
+
+.takeover-bar::before {
+    content: "";
+    display: block;
+    width: var(--bar-width);
+    height: 100%;
+    border-radius: inherit;
+    background: #4c74a8;
+}
+
+.takeover-times > div:first-child .takeover-bar::before {
+    background: #aa6509;
+}
+
+.takeover-findings .takeover-reliability {
+    margin: 12px 0;
+    font-variant-numeric: tabular-nums;
+}
+
+.takeover-reliability th {
+    text-align: left;
+}
+
+.takeover-reliability td:last-child {
+    color: #254977;
+    font-weight: 700;
+}
+
+.voice-study-dialogues.takeover-dialogues {
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 12rem), 1fr));
+}
+
+@media (max-width: 680px) {
+    .case-study-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .portfolio-projects header {
+        padding-inline: 12px;
+    }
+
+    .portfolio-projects nav ul {
+        gap: 12px;
+    }
+
+    .portfolio-projects nav ul li {
+        margin-left: 0;
+    }
+
+    .portfolio-projects nav ul li:not(:last-child)::after {
+        margin-left: 12px;
+    }
+}
+
+@media (max-width: 560px) {
+    .project-grid,
+    .voice-study-dialogues {
+        grid-template-columns: 1fr;
+    }
 }
 
 /* 1. Center the entire page content */

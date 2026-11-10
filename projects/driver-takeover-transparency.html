@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A driving simulator study on how the amount and reliability of information shape trust, workload, situation awareness, and takeover performance in automated vehicles.">
+    <title>When More Is Less: Finding the Right Balance of Information in Automated Vehicles | Jing Zang</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body class="portfolio-projects">
+    <header>
+        <div class="logo">
+            <span class="logo-dot"></span>
+            Jing Zang 臧晶
+        </div>
+        <nav aria-label="Main navigation">
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../CV/index.html">CV</a></li>
+                <li><a href="index.html" aria-current="true">Projects</a></li>
+                <li><a href="../Contact/index.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="projects-main project-detail">
+        <a class="project-back" href="index.html"><span aria-hidden="true">←</span> All projects</a>
+        <article class="case-study">
+            <div class="case-study-intro">
+                <p class="project-label">Automotive UX · Human–AI Interaction · Driving Simulator Study</p>
+                <h1>When More Is Less: Finding the Right Balance of Information in Automated Vehicles</h1>
+                <p><em>In-vehicle Voice Agent</em></p>
+            </div>
+            <div class="case-study-text">
+                <figure class="case-study-cover">
+                    <img src="Resource/takeover-transparency.png" width="1784" height="881" alt="A confused driver wonders why the car acted, while another driver receives a takeover request explaining that heavy traffic is ahead">
+                </figure>
+                <section>
+                    <h2>Background</h2>
+                    <p>As vehicles become increasingly automated, drivers rely on intelligent systems to understand vehicle behavior and make informed decisions. An in-vehicle agent can explain what the system is doing, why it is doing it, and what it plans to do next.</p>
+                    <p>Extra detail takes time to process, especially during a takeover. Unreliable information can also make it harder to judge what the system is doing. The design challenge is to determine how much information drivers need to understand the situation and respond safely.</p>
+                </section>
+                <section>
+                    <h2>Research Questions</h2>
+                    <p><strong>How much information is enough to support effective human–automation interaction?</strong></p>
+                    <ul>
+                        <li>How do different levels of information transparency affect driver trust, situation awareness, workload, and driving performance?</li>
+                        <li>How does system reliability influence the effectiveness of different information strategies?</li>
+                        <li>Can providing too much information negatively affect user experience and performance?</li>
+                    </ul>
+                </section>
+                <section>
+                    <h2>Research Approach</h2>
+                    <p>I investigated these questions in a controlled driving simulator study with <strong>48 participants</strong> and a <strong>3 × 2 mixed factorial design</strong>. Each participant experienced one level of information transparency and both reliability conditions while completing automated driving tasks, including responding to takeover requests.</p>
+                    <h3>Information Transparency</h3>
+                    <ul>
+                        <li><strong>Low.</strong> What the system is doing.</li>
+                        <li><strong>Medium.</strong> What the system is doing and why.</li>
+                        <li><strong>High.</strong> What the system is doing, why, and what will happen next.</li>
+                    </ul>
+                    <h3>System Reliability</h3>
+                    <ul>
+                        <li><strong>High reliability.</strong> 83%.</li>
+                        <li><strong>Low reliability.</strong> 50%.</li>
+                    </ul>
+                    <h3>Evaluation Measures</h3>
+                    <ul>
+                        <li><strong>User perception and trust.</strong> Perceived accuracy, cognitive trust, and affective trust.</li>
+                        <li><strong>Cognitive experience.</strong> Workload and situation awareness.</li>
+                        <li><strong>Behavioral performance.</strong> Takeover time, lane keeping, and vehicle control.</li>
+                    </ul>
+                </section>
+                <section>
+                    <h2>Key Findings</h2>
+                    <div class="takeover-findings">
+                        <figure>
+                            <figcaption>
+                                <strong>The shortest message led to the fastest takeover</strong>
+                                <span>Mean takeover time · 0–4 seconds</span>
+                            </figcaption>
+                            <dl class="takeover-times">
+                                <div>
+                                    <dt>What</dt>
+                                    <dd>
+                                        <span class="takeover-bar" style="--bar-width: 52.25%" aria-hidden="true"></span>
+                                        <strong>2.09 s</strong>
+                                    </dd>
+                                </div>
+                                <div>
+                                    <dt>What + why</dt>
+                                    <dd>
+                                        <span class="takeover-bar" style="--bar-width: 77.25%" aria-hidden="true"></span>
+                                        <strong>3.09 s</strong>
+                                    </dd>
+                                </div>
+                                <div>
+                                    <dt>What + why + next</dt>
+                                    <dd>
+                                        <span class="takeover-bar" style="--bar-width: 85.75%" aria-hidden="true"></span>
+                                        <strong>3.43 s</strong>
+                                    </dd>
+                                </div>
+                            </dl>
+                            <p>Drivers took over <strong>1.34 seconds sooner on average</strong> with the shortest message than with the most detailed one. Transparency also affected lane keeping and vehicle control.</p>
+                        </figure>
+                        <figure>
+                            <figcaption>
+                                <strong>Reliability mattered when the agent explained why</strong>
+                                <span>Mean scores for “what + why” messages</span>
+                            </figcaption>
+                            <table class="voice-study-reliability takeover-reliability">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Measure</th>
+                                        <th scope="col">50% reliable</th>
+                                        <th scope="col">83% reliable</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">Cognitive trust <span>7-point scale</span></th>
+                                        <td>4.28</td>
+                                        <td>5.11</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Workload <span>NASA-TLX</span></th>
+                                        <td>39.83</td>
+                                        <td>32.04</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Situation awareness <span>Level 1</span></th>
+                                        <td>69%</td>
+                                        <td>91%</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <p>With the more reliable agent, drivers reported <strong>higher trust and lower workload</strong> and scored higher on awareness of the current situation.</p>
+                        </figure>
+                    </div>
+                    <figure class="voice-study-figure">
+                        <figcaption>What the three messages could sound like for the same crash ahead</figcaption>
+                        <div class="voice-study-dialogues takeover-dialogues">
+                            <div class="voice-study-dialogue">
+                                <h3>What</h3>
+                                <p>“Take control now.”</p>
+                            </div>
+                            <div class="voice-study-dialogue">
+                                <h3>What + why</h3>
+                                <p>“Take control now. There’s a crash ahead.”</p>
+                            </div>
+                            <div class="voice-study-dialogue">
+                                <h3>What + why + next</h3>
+                                <p>“Take control now. There’s a crash ahead. You’ll need to drive past it.”</p>
+                            </div>
+                        </div>
+                    </figure>
+                </section>
+                <section>
+                    <h2>Design Implications</h2>
+                    <ul>
+                        <li><strong>Prioritize relevant information.</strong> Lead with what the driver needs to understand and act on in the moment.</li>
+                        <li><strong>Consider system reliability.</strong> Choose how much to explain based on the accuracy and limitations of the available information.</li>
+                        <li><strong>Balance understanding and cognitive demands.</strong> Evaluate information strategies with both driver feedback and behavioral measures.</li>
+                    </ul>
+                </section>
+                <section>
+                    <h2>Research Impact</h2>
+                    <p>The study offers guidance for designing explanations in automated vehicles and other intelligent systems where people need to act under time pressure. <strong>Give users the information they need for the decision at hand.</strong></p>
+                </section>
+                <section>
+                    <h2>Publication</h2>
+                    <p>Zang, J., &amp; Jeon, M. (2025). <cite>When more is less: Finding the optimal balance of intelligent agents’ transparency in level 3 automated vehicles.</cite> <em>International Journal of Human–Computer Studies, 193</em>, 103384.</p>
+                    <p><a class="project-paper-link" href="https://doi.org/10.1016/j.ijhcs.2024.103384">Read the publication <span aria-hidden="true">↗</span></a></p>
+                </section>
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <div class="footer-divider"></div>
+        <div class="footer-container">
+            <div class="footer-col">
+                <h3>Email</h3>
+                <a href="mailto:zang14@purdue.edu" class="email-link">zang14@purdue.edu</a>
+            </div>
+            <div class="footer-col">
+                <h3>Follow Me</h3>
+                <div class="social-icons">
+                    <a href="https://www.linkedin.com/in/jing-zang-b282b7230" aria-label="LinkedIn" target="_blank" rel="noopener"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
+                    <a href="https://scholar.google.com/citations?user=qBvzbe0AAAAJ&hl=en" aria-label="Google Scholar" target="_blank" rel="noopener"><i class="fas fa-graduation-cap" aria-hidden="true"></i></a>
+                </div>
+            </div>
+            <div class="footer-col copyright-col">
+                <p>&copy; 2025 By Jing Zang</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

@@ -4,118 +4,176 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jing Zang Portfolio</title>
+    <meta name="description" content="Case studies on how people interact with automated vehicles, AI assistants, and other safety-critical systems.">
+    <title>Projects | Jing Zang</title>
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
-<body>
-
+<body class="portfolio-projects">
     <header>
         <div class="logo">
             <span class="logo-dot"></span>
             Jing Zang 臧晶
         </div>
-        <nav>
+        <nav aria-label="Main navigation">
             <ul>
                 <li><a href="../index.html">Home</a></li>
-                <li><a href="/CV/index.html" class="active">CV</a></li>
-                <li><a href="/projects/index.html">Projects</a></li>
-                <li><a href="/Contact/index.html">Contact</a></li>
+                <li><a href="../CV/index.html">CV</a></li>
+                <li><a href="index.html" aria-current="page">Projects</a></li>
+                <li><a href="../Contact/index.html">Contact</a></li>
             </ul>
         </nav>
     </header>
 
-    <main class="projects-main">    
-        <h1>Research Publications</h1>
-        <div class="Publication">
-            <div class="Publication description">
-                <h2><a href="https://www.sciencedirect.com/science/article/abs/pii/S1071581924001678" target="_blank">How much information does the driver need?</a></h2> <br>
-                <p>
-                    Imagine you're driving in a conditionally automated vehicle with an in-vehicle intelligent agent, and it suddenly asks you to take over. The agent is able to provide information about what it's doing, why it's doing it, and what it plans to do next that can help you to understand system's intention and make better performance. But how much information do you really need from the system? Does more information always lead to better performance? Could too much information overwhelm you instead?<br>
-                    To explore these questions, we conducted an experiment using a driving simulator. We used two robots to represent different systems with varying reliability to test how the amount of information provided affects both human perception and performance.
-                </p>
-            </div>
-            <div class="Publication image">
-                <a href="https://www.sciencedirect.com/science/article/abs/pii/S1071581924001678" target="_blank">
-                    <img src="Resource/Research-project-1.jpg" alt="Publication 1">
-                </a>
-            </div>
-            
+    <main class="projects-main">
+        <section class="projects-intro" aria-labelledby="projects-title">
+            <h1 id="projects-title">Selected Projects</h1>
+            <p>Case studies on how people interact with automated vehicles, AI assistants, and other safety-critical systems.</p>
+        </section>
+
+        <div class="project-filters" role="group" aria-label="Filter projects by category" hidden>
+            <button type="button" data-category="all" aria-pressed="true">All Projects</button>
+            <button type="button" data-category="automotive-ux" aria-pressed="false">Automotive UX</button>
+            <button type="button" data-category="adaptive-systems" aria-pressed="false">Adaptive Systems</button>
+            <button type="button" data-category="safety-engineering" aria-pressed="false">Safety &amp; HF</button>
+            <button type="button" data-category="inclusive-ux" aria-pressed="false">Inclusive UX</button>
         </div>
-                <div class="Publication">
-            <div class="Publication description">
-                <h2><a href="https://www.researchgate.net/publication/363638720_The_Effects_of_Transparency_and_Reliability_of_In-Vehicle_Intelligent_Agents_on_Driver_Perception_Takeover_Performance_Workload_and_Situation_Awareness_in_Conditionally_Automated_Vehicles" target="_blank">How the information should be present to the driver?</a></h2> <br>
-                <p>
-                    No driving system is perfect. While having an in-vehicle intelligent agent (IVIA) as an assistant is generally better than having none, if the agent isn’t reliable, will people still trust and use it? Would you want to ask for more information if you are confused? Will the availability for the agent to "communicate" gives you a sense of more human-like and trigger more trust behavior and perception?<br>
-                    To explore these questions, we tested two types of IVIAs: a proactive (Push) system that provides all relevant information about an event at once, and an on-demand (Pull) system that only gives information when the driver requests it. Additionally, we conducted a survey to understand users' preferences for these interactions and explored the reasons behind their choices.
-                </p>
+
+        <section class="project-group" aria-labelledby="automotive-ux">
+            <h2 id="automotive-ux"><span class="project-group-number" aria-hidden="true">01.</span> Automotive UX &amp; Human–AI Interaction</h2>
+            <div class="project-grid">
+                <article class="project-card">
+                    <div class="project-card-image">
+                        <img src="Resource/context-aware-communication.png" width="1774" height="887" alt="An in-vehicle voice agent supports the driver with the right information at the right time in the right way" loading="lazy">
+                    </div>
+                    <div class="project-card-text">
+                        <p class="project-label">Ph.D. dissertation research</p>
+                        <h3><a href="context-aware-communication.html">Context-Aware Communication for Automated Driving</a></h3>
+                        <p>Data collection completed · Analysis in progress</p>
+                    </div>
+                </article>
+                <article class="project-card">
+                    <div class="project-card-image">
+                        <img src="Resource/invigorate-experience.png" width="1774" height="887" alt="The Invigorate Experience combines music, seat vibration, ambient lighting, airflow, and scent inside the vehicle" loading="lazy">
+                    </div>
+                    <div class="project-card-text">
+                        <p class="project-label">Purdue University × Ford Motor Company</p>
+                        <h3><a href="driver-wellbeing.html">Multisensory In-Vehicle Experiences for Driver Engagement</a></h3>
+                        <p>Conducted simulator-based and on-road studies to evaluate whether the Invigorate Experience can enhance driver vigilance and emotional well-being.</p>
+                    </div>
+                </article>
+                <article class="project-card">
+                    <div class="project-card-image">
+                        <img src="Resource/vibrotactile-alert-locations.png" width="1774" height="887" alt="Vibration actuators on the seat back, seat belt, and seat cushion in both experiments, with additional actuators on the steering wheel in manual driving and on wrist-worn devices in automated driving" loading="lazy">
+                    </div>
+                    <div class="project-card-text">
+                        <p class="project-label">Purdue University × ZF Group</p>
+                        <h3><a href="vibrotactile-seat-feedback.html">Designing Vibrotactile Alerts for Driving</a></h3>
+                        <p>Two simulator studies with 40 drivers tested how vibration placement and strength shape alert responses in manual driving and Level 3 takeovers.</p>
+                    </div>
+                </article>
+                <article class="project-card">
+                    <div class="project-card-image">
+                        <img src="Resource/voice-agent-push-pull.png" width="1785" height="881" alt="Side-by-side illustration of a proactive agent explaining that a car is merging and an on-demand agent giving the explanation after the driver asks" loading="lazy">
+                    </div>
+                    <div class="project-card-text">
+                        <p class="project-label">In-vehicle Voice Agent</p>
+                        <h3><a href="proactive-and-on-demand-agents.html">Designing Human-AI Interactions Under Varying System Reliability</a></h3>
+                        <p>Tested how proactive and on-demand voice explanations and information reliability shape the driver experience in automated vehicles.</p>
+                    </div>
+                </article>
+                <article class="project-card">
+                    <div class="project-card-image">
+                        <img src="Resource/takeover-transparency.png" width="1784" height="881" alt="A confused driver wonders why the car acted, while another driver receives a takeover request explaining that heavy traffic is ahead" loading="lazy">
+                    </div>
+                    <div class="project-card-text">
+                        <p class="project-label">In-vehicle Voice Agent</p>
+                        <h3><a href="driver-takeover-transparency.html">Designing Information Transparency for Intelligent Vehicle Interfaces</a></h3>
+                        <p>Tested how the amount and reliability of information affect driver trust, workload, situation awareness, and takeover performance.</p>
+                    </div>
+                </article>
             </div>
-            <div class="Publication image">
-                <a href="https://www.researchgate.net/publication/363638720_The_Effects_of_Transparency_and_Reliability_of_In-Vehicle_Intelligent_Agents_on_Driver_Perception_Takeover_Performance_Workload_and_Situation_Awareness_in_Conditionally_Automated_Vehicles" target="_blank">
-                    <img src="Resource/Research-project-2.png" alt="Publication 2">
-                </a>
+        </section>
+
+        <section class="project-group" aria-labelledby="adaptive-systems">
+            <h2 id="adaptive-systems"><span class="project-group-number" aria-hidden="true">02.</span> Adaptive Intelligent Systems</h2>
+            <div class="project-grid">
+                <article class="project-card">
+                    <div class="project-card-image">
+                        <img src="Resource/Side-project1.jpg" width="385" height="286" alt="Driving simulator setup with eye tracking, skin conductance, cardiac, and EEG sensors" loading="lazy">
+                    </div>
+                    <div class="project-card-text">
+                        <p class="project-label">Driver State Monitoring · Multimodal Sensing</p>
+                        <h3><a href="measuring-driver-trust.html">Real-Time Trust Assessment</a></h3>
+                        <p>Evaluating which sensors and signal features can help estimate trust in automated driving.</p>
+                    </div>
+                </article>
+                <article class="project-card">
+                    <div class="project-card-image project-card-image--photo">
+                        <img src="Resource/driver-vigilance-monitoring.png" width="1671" height="941" alt="Driver with eye-tracking landmarks and an illustrative PERCLOS vigilance monitoring display" loading="lazy">
+                    </div>
+                    <div class="project-card-text">
+                        <p class="project-label">Driver State Monitoring · Multimodal Sensing</p>
+                        <h3><a href="driver-vigilance-monitoring.html">Real-Time Driver Vigilance Monitoring System</a></h3>
+                        <p>Developed a PERCLOS-based driver vigilance monitoring system and evaluated its detection outcomes against traditional assessments.</p>
+                    </div>
+                </article>
             </div>
-            
-        </div>
-                <div class="Publication">
-            <div class="Publication description">
-                <h2>What is the best way for communication and collaboration? (On-going Research)</h2> <br>
-                <p>
-                    Given the fundamental advancements in vehicle capabilities, it is important to consider the driver-vehicle relationship as a team.<br>
-                    Our on-going research considers adding social elements into the voice agents in enhancing human-AI teaming, exploring the design implications considering the system's capability and human capability, identifying common obstacles in designing driver-ADS teams, and suggesting potential solutions. We hope to offer valuable insights for designing AI teammates that are perceived as trustworthy, relatable, and capable partners within human-AI teams (HATs).
-                </p>
+        </section>
+
+        <section class="project-group" aria-labelledby="safety-engineering">
+            <h2 id="safety-engineering"><span class="project-group-number" aria-hidden="true">03.</span> Human Factors &amp; Safety Engineering</h2>
+            <div class="project-grid">
+                <article class="project-card">
+                    <div class="project-card-image project-card-image--photo">
+                        <img src="Resource/Side-project3.jpg" width="972" height="587" alt="Participant driving through a simulated road with work zone signs" loading="lazy">
+                    </div>
+                    <div class="project-card-text">
+                        <p class="project-label">Work zone safety</p>
+                        <h3><a href="automated-flagger-systems.html">INDOT Automated Flagger</a></h3>
+                        <p>Comparing systems that can reduce flaggers’ exposure to traffic while maintaining work zone traffic control.</p>
+                    </div>
+                </article>
+                <article class="project-card">
+                    <div class="project-card-image project-card-image--photo">
+                        <img src="Resource/Side-project6.jpg" width="870" height="518" alt="Operators working at consoles in a nuclear plant control room" loading="lazy">
+                    </div>
+                    <div class="project-card-text">
+                        <p class="project-label">Incident review and root cause analysis</p>
+                        <h3><a href="nuclear-plant-reliability.html">Nuclear Power Plant Safety</a></h3>
+                        <p>Using incident reports to identify sources of error during commissioning and propose ways to reduce them.</p>
+                    </div>
+                </article>
             </div>
-            <div class="Publication image">
-                <a href="https://www.sciencedirect.com/science/article/pii/S2214212623000587" target="'_blank">
-                    <img src="Resource/Research-project-3.jpg" alt="Publication 3">
-                </a>
+        </section>
+
+        <section class="project-group" aria-labelledby="inclusive-ux">
+            <h2 id="inclusive-ux"><span class="project-group-number" aria-hidden="true">04.</span> Inclusive UX &amp; Emerging Technologies</h2>
+            <div class="project-grid">
+                <article class="project-card">
+                    <div class="project-card-image project-card-image--photo">
+                        <img src="Resource/Side-project5.jpg" width="487" height="367" alt="Four project team members holding their design poster" loading="lazy">
+                    </div>
+                    <div class="project-card-text">
+                        <p class="project-label">Personas and usability testing</p>
+                        <h3><a href="home-assistant-for-older-adults.html">AI Home Assistant</a></h3>
+                        <p>Designing usability tests for a home assistant with voice and visual interfaces.</p>
+                    </div>
+                </article>
+                <article class="project-card">
+                    <div class="project-card-image project-card-image--photo">
+                        <img src="Resource/Side-project2.jpg" width="698" height="566" alt="An older adult seated in the back of a vehicle" loading="lazy">
+                    </div>
+                    <div class="project-card-text">
+                        <p class="project-label">Literature review</p>
+                        <h3><a href="older-adults-vehicle-adoption.html">Older Adults &amp; Automated Vehicles</a></h3>
+                        <p>Reviewing a decade of research on factors that shape older adults’ acceptance of automated vehicles.</p>
+                    </div>
+                </article>
             </div>
-            
-        </div>
-        <h1>Other Interesting Projects</h1>
-            <div class="side-projects">
-                <div class="side-project">  
-                    <img src="Resource/Side-project1.jpg" alt="Side Project 1">
-                    <h2>Psychophysiological Measurement of Driver's Trust in Automated Vehicles</h2> <br>
-                    <p>To address the challenge of real-time assessment of human trust, we designed a simulated driving study. By implementing machine learning classification models, we are able to identify the most efficient combination of different psychophysiological sensors (i.e. Eye-tracking, ECG, EEG, EDA) and visualize and identify the features that contribute the most to predictive outcomes.</p>
-                </div>
-
-
-                <div class="side-project">  
-                    <img src="Resource/Side-project2.jpg" alt="Side Project 2">
-                    <h2>Challenges Faced by Older Adults in Automated Vehicle Adoption</h2> <br>
-                    <p>Older adults are poised to be one of the groups that benefit the most from the widespread adoption of autonomous vehicles (AVs). However, numerous studies have found that they face significant challenges in adopting this technology. To address this, we conducted a literature review summarizing research from the past decade, focusing on the barriers and difficulties older adults encounter with AV adoption. This review highlights key factors influencing their acceptance and provides insights into how future developments can be tailored to meet their needs. We presented a lecture on the 68th HFES annual meeting (ASPIRE) to deliver our results.</p>
-                </div>
-
-                <div class="side-project">  
-                    <img src="Resource/Side-project3.jpg" alt="Side Project 3">
-                    <h2>Automated Flagger Systems</h2> <br>
-                    <p>Flaggers work closely to open traffic lanes which makes them a high-risk profession. To eliminate such hazardous tasks, we are testing a range of current Automated Flagger Assistance Devices (AFAD) systems to evaluate their effectiveness in various environments. These systems aim to improve safety by reducing the need for human involvement in dangerous flagging operations while maintaining efficient traffic control in construction zones. This project is funded by the Indiana Department of Transportation.</p>
-                </div>
-
-
-                <div class="side-project">  
-                    <img src="Resource/Side-project4.jpg" alt="Side Project 4">
-                    <h2>Designing for Driver Wellbeing</h2> <br>
-                    <p>Driver wellbeing encompasses both physical and mental health. To create a more supportive and revitalizing driving experience, we conducted naturalistic and simulated studies exploring potentials to enhance driver wellbeing. Leveraging advanced computer vision techniques, we monitored driver behavior and physiological cues in real time. Tailored in-vehicle experiences were triggered under predefined conditions to enhance driver wellbeing.This project is conducted in collaboration with Ford Motor Company.</p>
-                </div>
-
-                <div class="side-project">  
-                    <img src="Resource/Side-project5.jpg" alt="Side Project 5">
-                    <h2>Design a Home Device With LLM for Older Adults</h2> <br>
-                    <p>As people age, they face certain challenges in their daily affairs, particularly considering memory decline. A home device can assist in assessing how older adults interact with digital assistants using both voice and visual inputs. In our usability testing, we developed user personas and designed a series of methods to measure the effectiveness of this future technology. We assessed task completion rates, the number of times users had to repeat themselves, and their ability to interact with the device under conditions of voice or visual impairment.</p>
-                    <p>This project report earned first place at the Student Career and Professional Day during the 68th HFES annual meeting (ASPIRE).</p>
-                </div>
-
-
-                <div class="side-project">  
-                    <img src="Resource/Side-project6.jpg" alt="Side Project 6">
-                    <h2>Human Factors in Nuclear Power Plant</h2> <br>
-                    <p>Eliminating human error during the commissioning phase is critical for ensuring safety and system reliability. For this project, I was responsible for analyzing and improving system reliability by addressing human errors and technical issues. I retrieved and reviewed over 90 incident reports, conducted thorough root cause analysis using data visualization techniques, and proposed effective mitigation strategies to enhance system reliability and minimize the occurrence of human errors. This work was summarized in my Bachelor's thesis, which won the Best Thesis Award in 2019.</p>
-                </div>
-            </div>
-
+        </section>
+    </main>
 
     <footer>
         <div class="footer-divider"></div>
@@ -127,8 +185,8 @@
             <div class="footer-col">
                 <h3>Follow Me</h3>
                 <div class="social-icons">
-                    <a href="https://www.linkedin.com/in/jing-zang-b282b7230" target="_blank"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://scholar.google.com/citations?user=qBvzbe0AAAAJ&hl=en" target="_blank"><i class="fas fa-graduation-cap"></i></a>
+                    <a href="https://www.linkedin.com/in/jing-zang-b282b7230" aria-label="LinkedIn" target="_blank" rel="noopener"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
+                    <a href="https://scholar.google.com/citations?user=qBvzbe0AAAAJ&hl=en" aria-label="Google Scholar" target="_blank" rel="noopener"><i class="fas fa-graduation-cap" aria-hidden="true"></i></a>
                 </div>
             </div>
             <div class="footer-col copyright-col">
@@ -136,5 +194,24 @@
             </div>
         </div>
     </footer>
+    <script>
+        const filters = document.querySelector('.project-filters');
+        const filterButtons = filters.querySelectorAll('button');
+        const projectGroups = document.querySelectorAll('.project-group');
 
-    </main>
+        for (const button of filterButtons) {
+            button.addEventListener('click', () => {
+                const category = button.dataset.category;
+                for (const filter of filterButtons) {
+                    filter.setAttribute('aria-pressed', filter === button);
+                }
+                for (const group of projectGroups) {
+                    group.hidden = category !== 'all' && group.getAttribute('aria-labelledby') !== category;
+                }
+            });
+        }
+        filters.hidden = false;
+    </script>
+</body>
+
+</html>

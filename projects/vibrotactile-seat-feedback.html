@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Two driving simulator studies on how vibration placement and strength affect driver response, takeover timing, and perceived urgency.">
+    <title>Designing Vibrotactile Alerts for Driving | Jing Zang</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body class="portfolio-projects">
+    <header>
+        <div class="logo">
+            <span class="logo-dot"></span>
+            Jing Zang 臧晶
+        </div>
+        <nav aria-label="Main navigation">
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../CV/index.html">CV</a></li>
+                <li><a href="index.html" aria-current="true">Projects</a></li>
+                <li><a href="../Contact/index.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="projects-main project-detail">
+        <a class="project-back" href="index.html"><span aria-hidden="true">←</span> All projects</a>
+        <article class="case-study">
+            <div class="case-study-intro">
+                <p class="project-label">Automotive UX · Haptic Interaction · Human Factors Research</p>
+                <h1>Designing Vibrotactile Alerts for Driving</h1>
+                <p><em>Purdue University × ZF Group</em></p>
+            </div>
+            <div class="case-study-text">
+                <figure class="case-study-cover">
+                    <img src="Resource/vibrotactile-alert-locations.png" width="1774" height="887" alt="Vibration actuators on the seat back, seat belt, and seat cushion in both experiments, with additional actuators on the steering wheel in manual driving and on wrist-worn devices in automated driving">
+                </figure>
+                <section>
+                    <h2>Overview</h2>
+                    <p>A vibration can draw a driver’s attention while their eyes and ears are already busy. We tested where to place that vibration and how strong to make it for two situations: getting a driver’s attention during manual driving and asking them to take back control from an automated vehicle.</p>
+                </section>
+                <section>
+                    <h2>Background &amp; Research Questions</h2>
+                    <p>Modern vehicles increasingly rely on visual and auditory alerts to communicate important information. However, these channels can become overloaded when drivers are managing multiple tasks or attending to complex driving situations. Haptic feedback offers an alternative communication channel without adding further demands to these already engaged sensory resources. Its effectiveness may vary depending on driving mode, task demands, and feedback design.</p>
+                    <p>This raises an important UX design challenge: <strong>How should haptic feedback be tailored to different driving contexts to support effective, intuitive, and comfortable interactions?</strong></p>
+                    <p>Our research focused on three questions:</p>
+                    <ul>
+                        <li><strong>Haptic Design:</strong> How do vibration location and intensity affect driver responses and perceptions?</li>
+                        <li><strong>Task Demands:</strong> How does secondary task engagement influence the effectiveness of haptic feedback?</li>
+                        <li><strong>Adaptive Design:</strong> How can findings from manual and automated driving inform future context-aware haptic interfaces?</li>
+                    </ul>
+                </section>
+                <section>
+                    <h2>Research Approach</h2>
+                    <p>We ran two driving simulator experiments with <strong>40 licensed drivers</strong>, 20 per experiment. In both, we varied vibration strength and location and tested alerts with and without a secondary task.</p>
+                    <p>We measured response times and vehicle control, including takeover timing in the Level 3 study. Drivers also rated urgency, annoyance, and workload.</p>
+                    <ul>
+                        <li><strong>Manual driving.</strong> Drivers acknowledged the alert with a button press while maintaining speed and lane position. We tested vibrations at the seat back, seat belt, seat cushion, and steering wheel.</li>
+                        <li><strong>Level 3 automated driving.</strong> Drivers responded to a takeover request and changed lanes to avoid a stopped vehicle. We tested the same three seat and belt locations and used a wrist-worn device as the fourth location.</li>
+                    </ul>
+                </section>
+                <section>
+                    <h2>Key Insights</h2>
+                    <ul>
+                        <li><strong>Placement shaped response speed.</strong> Steering-wheel alerts produced the slowest responses in manual driving. Stronger vibrations at the seat cushion shortened responses in both experiments. Stronger wrist vibrations also shortened responses in the Level 3 experiment.</li>
+                        <li><strong>Stronger alerts shortened simulated takeovers.</strong> In the Level 3 experiment, mean takeover time fell from 1.93 seconds at low intensity to 1.73 seconds at high intensity.</li>
+                        <li><strong>Perceived urgency and response speed told different stories.</strong> Drivers rated the seat cushion as less urgent than the seat belt in manual driving and less urgent than the wrist in Level 3. Seat cushion alerts could still prompt fast responses.</li>
+                        <li><strong>Task demand changed the effect on vehicle control.</strong> In manual driving, stronger cues were followed by smoother changes in acceleration when drivers had a secondary task and more abrupt changes when driving was their only task.</li>
+                    </ul>
+                </section>
+                <section>
+                    <h2>UX Design Implications</h2>
+                    <p>Choose where the driver feels a cue and how strong it is together. Test whether it gets noticed, conveys the intended urgency, and supports a smooth response in the driving situation it is designed for. The seat cushion is a candidate for cues that need a quick response with a lower sense of urgency.</p>
+                    <p>The two experiments used different tasks and were analyzed separately. The simulator results can guide prototype choices. Production settings would need to be calibrated and validated in vehicles.</p>
+                </section>
+                <section>
+                    <h2>Manuscript</h2>
+                    <p>Zang, J., Huang, G., Lo, W.-H., &amp; Pitts, B. J. (2026). <cite>Where, How Strong, and Under What Demand? Driver Responses and Perception to Vibrotactile Signal Parameters Across Driving Modes.</cite></p>
+                    <p>The ZF Automotive Group provided partial funding.</p>
+                </section>
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <div class="footer-divider"></div>
+        <div class="footer-container">
+            <div class="footer-col">
+                <h3>Email</h3>
+                <a href="mailto:zang14@purdue.edu" class="email-link">zang14@purdue.edu</a>
+            </div>
+            <div class="footer-col">
+                <h3>Follow Me</h3>
+                <div class="social-icons">
+                    <a href="https://www.linkedin.com/in/jing-zang-b282b7230" aria-label="LinkedIn" target="_blank" rel="noopener"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
+                    <a href="https://scholar.google.com/citations?user=qBvzbe0AAAAJ&hl=en" aria-label="Google Scholar" target="_blank" rel="noopener"><i class="fas fa-graduation-cap" aria-hidden="true"></i></a>
+                </div>
+            </div>
+            <div class="footer-col copyright-col">
+                <p>&copy; 2025 By Jing Zang</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

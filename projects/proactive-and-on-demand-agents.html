@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A driving simulator study of proactive and on-demand voice explanations and information reliability in automated vehicles.">
+    <title>Designing Transparent In-Vehicle Intelligent Agents | Jing Zang</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body class="portfolio-projects">
+    <header>
+        <div class="logo">
+            <span class="logo-dot"></span>
+            Jing Zang 臧晶
+        </div>
+        <nav aria-label="Main navigation">
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../CV/index.html">CV</a></li>
+                <li><a href="index.html" aria-current="true">Projects</a></li>
+                <li><a href="../Contact/index.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="projects-main project-detail">
+        <a class="project-back" href="index.html"><span aria-hidden="true">←</span> All projects</a>
+        <article class="case-study">
+            <div class="case-study-intro">
+                <p class="project-label">Automotive UX · Human–AI Interaction · Voice User Interfaces</p>
+                <h1>Designing Transparent In-Vehicle Intelligent Agents</h1>
+                <p><em>2021–2022 | Virginia Tech | Published Research</em></p>
+            </div>
+            <div class="case-study-text">
+                <section>
+                    <h2>Overview</h2>
+                    <p><strong>How should an automated vehicle explain its decisions to the driver?</strong></p>
+                    <p>We studied whether drivers respond differently when an in-vehicle agent explains its actions upfront or waits for a request. We also tested how the accuracy of those explanations shapes trust, workload, situation awareness, and takeover performance.</p>
+                </section>
+                <section>
+                    <h2>Background &amp; Research Questions</h2>
+                    <p>When automation is in control, drivers may have little insight into why a vehicle slows down or changes lanes. Voice explanations can make those actions easier to understand. Their timing and accuracy may shape the driver’s experience.</p>
+                    <ul>
+                        <li>How does proactive versus on-demand information delivery affect driver experience and performance?</li>
+                        <li>How does information accuracy influence driver trust, workload, and situation awareness?</li>
+                        <li>Does the effect of an information delivery strategy depend on reliability?</li>
+                    </ul>
+                </section>
+                <section>
+                    <h2>Research Approach</h2>
+                    <p>In a driving simulator, 25 participants experienced both voice strategies. One group received entirely accurate information, while the other received accurate information 60% of the time.</p>
+                    <p>We collected driving performance measures, situation awareness assessments, standardized questionnaires, and user preferences.</p>
+                    <figure class="voice-study-figure">
+                        <figcaption>Illustrative dialogue for the same driving event</figcaption>
+                        <div class="voice-study-dialogues">
+                            <div class="voice-study-dialogue">
+                                <h3>Proactive · Push</h3>
+                                <p class="voice-study-message"><strong>Agent</strong><span>I’m slowing down. There’s a stopped car ahead.</span></p>
+                            </div>
+                            <div class="voice-study-dialogue">
+                                <h3>On-Demand · Pull</h3>
+                                <p class="voice-study-message"><strong>Agent</strong><span>I’m slowing down.</span></p>
+                                <p class="voice-study-message voice-study-message--driver"><strong>Driver</strong><span>Why are we slowing down?</span></p>
+                                <p class="voice-study-message"><strong>Agent</strong><span>There’s a stopped car ahead.</span></p>
+                            </div>
+                        </div>
+                    </figure>
+                </section>
+                <section>
+                    <h2>Key Insights</h2>
+                    <figure class="voice-study-figure voice-study-preference">
+                        <figcaption><strong>84%</strong> of participants ranked proactive communication first.</figcaption>
+                        <meter min="0" max="100" value="84" aria-label="Percentage of participants who ranked proactive communication first">84%</meter>
+                        <p>21 of 25 participants chose Push, and 4 chose Pull.</p>
+                    </figure>
+                    <ul>
+                        <li>Participants rated Push as more intelligent and competent. They rated Pull as warmer.</li>
+                        <li>Participants reported higher physical demand with Pull. The extra step of requesting information may contribute to this difference.</li>
+                        <li>Information delivery and reliability jointly affected peak lateral acceleration during takeover.</li>
+                    </ul>
+                    <table class="voice-study-reliability">
+                        <caption>How information reliability affected driver awareness and effort</caption>
+                        <thead>
+                            <tr>
+                                <th scope="col">Mean score</th>
+                                <th scope="col">High reliability</th>
+                                <th scope="col">Low reliability</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">Awareness of surroundings <span>(SAGAT Level 1)</span></th>
+                                <td>81%</td>
+                                <td>64%</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Reported effort <span>(NASA-TLX)</span></th>
+                                <td>26.4</td>
+                                <td>41.0</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p class="voice-study-note">Both differences were statistically significant. Trust ratings showed no statistically significant difference by reliability.</p>
+                </section>
+                <section>
+                    <h2>UX Design Implications</h2>
+                    <ul>
+                        <li><strong>Reduce interaction effort.</strong> Offer timely context when drivers have limited attention to ask for it.</li>
+                        <li><strong>Design for reliability.</strong> Account for the quality of available information when deciding what the agent should explain.</li>
+                        <li><strong>Preserve user control.</strong> Make additional detail easy to request when drivers have time and need more context.</li>
+                    </ul>
+                </section>
+                <section>
+                    <h2>My Contributions</h2>
+                    <p><strong>UX &amp; Human Factors Research</strong></p>
+                    <ul>
+                        <li>Experimental Design</li>
+                        <li>Data Collection</li>
+                        <li>Analyzed driving performance, workload, situation awareness, and subjective ratings.</li>
+                        <li>Translated the results into design implications and authored the publication.</li>
+                    </ul>
+                </section>
+                <section>
+                    <h2>Publication</h2>
+                    <p>Zang, J., &amp; Jeon, M. (2022). <cite>The Effects of Transparency and Reliability of In-Vehicle Intelligent Agents on Driver Perception, Takeover Performance, Workload and Situation Awareness in Conditionally Automated Vehicles.</cite> <em>Multimodal Technologies and Interaction, 6</em>(9), 82.</p>
+                    <p><a class="project-paper-link" href="https://doi.org/10.3390/mti6090082">Read Publication</a></p>
+                </section>
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <div class="footer-divider"></div>
+        <div class="footer-container">
+            <div class="footer-col">
+                <h3>Email</h3>
+                <a href="mailto:zang14@purdue.edu" class="email-link">zang14@purdue.edu</a>
+            </div>
+            <div class="footer-col">
+                <h3>Follow Me</h3>
+                <div class="social-icons">
+                    <a href="https://www.linkedin.com/in/jing-zang-b282b7230" aria-label="LinkedIn" target="_blank" rel="noopener"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
+                    <a href="https://scholar.google.com/citations?user=qBvzbe0AAAAJ&hl=en" aria-label="Google Scholar" target="_blank" rel="noopener"><i class="fas fa-graduation-cap" aria-hidden="true"></i></a>
+                </div>
+            </div>
+            <div class="footer-col copyright-col">
+                <p>&copy; 2025 By Jing Zang</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
